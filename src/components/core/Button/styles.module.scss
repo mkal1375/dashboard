@@ -1,0 +1,35 @@
+@use '@/styles/utils' as u;
+
+$button-variants: (
+  'primary': (
+    background: var(--color-primary),
+    border: var(--color-primary),
+    color: var(--color-on-primary),
+  ),
+  'ghost': (
+    background: transparent,
+    border: transparent,
+    color: var(--color-text),
+  ),
+  'outline': (
+    background: var(--color-white),
+    color: var(--color-text),
+    border: var(--color-primary),
+  ),
+);
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 1px solid transparent;
+  padding: u.rem(8px) u.rem(16px);
+  border-radius: var(--radii-xs);
+
+  @each $variant, $styles in $button-variants {
+    &--#{$variant} {
+      background-color: map-get($map: $styles, $key: background);
+      border-color: map-get($map: $styles, $key: border);
+      color: map-get($map: $styles, $key: color);
+    }
+  }
+}

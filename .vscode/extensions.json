@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-scss",
+    "clinyong.vscode-css-modules"
+  ]
+}

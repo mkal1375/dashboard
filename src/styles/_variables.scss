@@ -1,0 +1,19 @@
+@use 'utils' as u;
+
+:root {
+  // palette
+  --color-text: #444;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-primary: #096ef9;
+  --color-on-primary: #fff;
+  --color-primary-light: rgb(58, 139, 250);
+  --color-primary-dark: rgb(6, 77, 174);
+
+  // roundness
+  --radii-xs: #{u.rem(4px)};
+  --radii-sm: #{u.rem(8px)};
+  --radii-lg: #{u.rem(16px)};
+  --radii-xl: #{u.rem(20px)};
+}
