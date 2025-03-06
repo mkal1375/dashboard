@@ -1,7 +1,7 @@
 import { Nationalities } from '@/types/user';
 import { create } from 'zustand';
 
-export type NationalityInput = Nationalities | '';
+export type NationalityInput = Nationalities | 'all';
 
 interface GlobalStore {
   query: string;
@@ -12,7 +12,7 @@ interface GlobalStore {
 
 const useGlobalStore = create<GlobalStore>()((set) => ({
   query: '',
-  nationality: '',
+  nationality: 'all',
   setQuery: (value) => set({ query: value }),
   setNationality: (value) => set({ nationality: value }),
 }));

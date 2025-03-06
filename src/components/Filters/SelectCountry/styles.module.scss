@@ -1,0 +1,44 @@
+@use '@/styles/utils' as u;
+@use '@/styles/mixins' as m;
+
+$width: u.rem(180px);
+
+.select-trigger {
+  height: var(--items-height);
+  border: none;
+  background-color: var(--gray-50);
+  border-radius: var(--radii-full);
+  width: $width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: u.rem(16px);
+}
+
+.select-content {
+  width: $width;
+  background-color: white;
+  border-radius: var(--radii-lg);
+  margin-block-start: u.rem(8px);
+  overflow: hidden;
+  @include m.shadow;
+}
+
+.select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: u.rem(12px) u.rem(12px);
+  cursor: pointer;
+  &:focus-visible {
+    outline: none;
+    background-color: var(--color-focus-ring);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: u.rem(8px);
+  }
+}

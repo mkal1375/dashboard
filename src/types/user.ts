@@ -20,7 +20,7 @@ export const nationalityCountryMap = {
     icon: getIconName('ca'),
   },
   CH: {
-    name: 'China',
+    name: 'Switzerland',
     icon: getIconName('ch'),
   },
   DE: {

@@ -13,7 +13,7 @@ import { ZodError } from 'zod';
 export default function HomePage() {
   const { query, nationality } = useGlobalStore();
   const users = useLiveQuery(() => {
-    const nat = nationality !== '';
+    const nat = nationality !== 'all';
 
     if (nat) {
       return db.users

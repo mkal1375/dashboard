@@ -8,9 +8,10 @@
   display: flex;
   align-items: center;
   gap: u.rem(16px);
+  height: var(--items-height);
 
   &:focus-within {
-    outline: u.rem(3px) solid var(--blue-200);
+    outline: u.rem(3px) solid var(--color-focus-ring);
   }
 
   &__input {

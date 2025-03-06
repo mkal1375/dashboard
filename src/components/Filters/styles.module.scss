@@ -1,8 +1,10 @@
 @use '@/styles/utils' as u;
 
 .filters {
+  --items-height: u.rem(56px);
+
   display: flex;
-  gap: u.rem(32px);
+  gap: u.rem(16px);
   background: linear-gradient(to bottom, white, transparent);
   padding-block: var(--offset-bottom);
   position: sticky;

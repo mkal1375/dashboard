@@ -1,10 +1,11 @@
 import { SearchInput } from '@/components/Filters/SearchInput';
-import useGlobalStore, { type NationalityInput } from '@/store/global';
-import { nationalities, nationalityCountryMap } from '@/types/user';
+import SelectCountry from '@/components/Filters/SelectCountry';
+import useGlobalStore from '@/store/global';
 import styles from './styles.module.scss';
 
 export default function Filters() {
-  const { query, setQuery, nationality, setNationality } = useGlobalStore();
+  const { query, setQuery } = useGlobalStore();
+
   return (
     <div className={styles.filters}>
       <SearchInput
@@ -13,17 +14,7 @@ export default function Filters() {
         placeholder="e.g. Ghazal Tizpa"
         autoFocus
       />
-      <select
-        onChange={(e) => setNationality(e.target.value as NationalityInput)}
-        value={nationality}
-      >
-        <option value="">all</option>
-        {nationalities.map((o) => (
-          <option key={o} value={o}>
-            {nationalityCountryMap[o].name}
-          </option>
-        ))}
-      </select>
+      <SelectCountry />
     </div>
   );
 }
