@@ -1,0 +1,49 @@
+@use '@/styles/utils' as u;
+
+.menu-container {
+  --inner-height: #{u.rem(70px)};
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: var(--menu-height);
+  padding-inline: var(--offset-side);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, white, transparent);
+}
+
+.menu {
+  background-color: var(--color-primary-darker);
+  color: var(--color-on-primary);
+  height: var(--inner-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: u.rem(8px);
+  border-radius: var(--radii-full);
+  flex-grow: 1;
+  max-width: u.rem(350px);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: u.rem(8px);
+  padding: u.rem(10px) u.rem(24px);
+  border-radius: var(--radii-full);
+  color: var(--color-primary-light);
+  font-weight: 600;
+
+  &:focus {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 0;
+  }
+
+  &--active {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+}

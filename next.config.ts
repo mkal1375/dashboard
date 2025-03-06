@@ -1,7 +1,18 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+// import ungpluginIcons from 'unplugin-icons/webpack';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // reactStrictMode: true,
+  // webpack(config) {
+  //   config.plugins.push(
+  //     ungpluginIcons({
+  //       compiler: 'jsx',
+  //       jsx: 'react',
+  //       autoInstall: true,
+  //     })
+  //   );
+  //   return config;
+  // },
 };
 
 export default nextConfig;
