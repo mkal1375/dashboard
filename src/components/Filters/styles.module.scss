@@ -1,0 +1,10 @@
+@use '@/styles/utils' as u;
+
+.filters {
+  display: flex;
+  gap: u.rem(32px);
+  background: linear-gradient(to bottom, white, transparent);
+  padding-block: var(--offset-bottom);
+  position: sticky;
+  top: 0;
+}

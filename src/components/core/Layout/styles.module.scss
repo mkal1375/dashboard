@@ -1,0 +1,9 @@
+@use '@/styles/utils' as u;
+
+.main-layout {
+  padding-block-end: calc(var(--menu-height) + u.rem(0px));
+  padding-block-start: var(--offset-bottom);
+  padding-inline: var(--offset-side);
+  max-width: u.rem(1200px);
+  margin-inline: auto;
+}
