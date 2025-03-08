@@ -1,0 +1,9 @@
+.nat {
+  display: flex;
+  align-items: center;
+  gap: rem(4px);
+
+  & > div {
+    font-weight: 500;
+  }
+}

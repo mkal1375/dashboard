@@ -1,0 +1,10 @@
+.stat-card-chart {
+  > div {
+    height: rem(400px);
+    position: relative;
+  }
+
+  > header {
+    margin-block-end: rem(32px);
+  }
+}

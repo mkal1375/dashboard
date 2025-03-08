@@ -1,0 +1,25 @@
+.user-list {
+  display: grid;
+  gap: rem(8px);
+  grid-template-columns: repeat(auto-fit, minmax(rem(240px), 1fr));
+
+  @include mixins.above(mobile) {
+    gap: rem(16px);
+  }
+}
+
+.user-list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > h2 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  &__illustration {
+    width: rem(400px);
+  }
+}

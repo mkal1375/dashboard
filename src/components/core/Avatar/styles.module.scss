@@ -1,0 +1,8 @@
+.avatar {
+  position: relative;
+  --_size: var(--size, #{rem(48px)});
+  width: var(--_size);
+  height: var(--_size);
+  border-radius: var(--radii-full);
+  overflow: hidden;
+}

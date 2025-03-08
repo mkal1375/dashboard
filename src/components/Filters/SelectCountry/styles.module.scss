@@ -1,34 +1,29 @@
-@use '@/styles/utils' as u;
-@use '@/styles/mixins' as m;
-
-$width: u.rem(180px);
-
 .select-trigger {
   height: var(--items-height);
   border: none;
   background-color: var(--gray-50);
   border-radius: var(--radii-full);
-  width: $width;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: u.rem(16px);
+  padding-inline: rem(16px);
+  flex-grow: 4;
 }
 
 .select-content {
-  width: $width;
   background-color: white;
   border-radius: var(--radii-lg);
-  margin-block-start: u.rem(8px);
+  margin-block-start: rem(8px);
   overflow: hidden;
-  @include m.shadow;
+  @include mixins.shadow;
+  z-index: var(--layer-floating);
 }
 
 .select-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: u.rem(12px) u.rem(12px);
+  padding: rem(12px) rem(12px);
   cursor: pointer;
   &:focus-visible {
     outline: none;
@@ -39,6 +34,12 @@ $width: u.rem(180px);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: u.rem(8px);
+    gap: rem(8px);
   }
+}
+
+.select-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

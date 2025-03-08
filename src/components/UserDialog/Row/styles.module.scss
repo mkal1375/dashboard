@@ -1,0 +1,25 @@
+.row {
+  display: grid;
+  grid-template-columns: rem(18px) 1fr;
+  gap: rem(18px);
+
+  &__icon {
+    font-size: rem(18px);
+    color: var(--color-primary);
+
+    @include mixins.above(mobile) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__children {
+    display: flex;
+    align-items: center;
+    color: var(--gray-700);
+    font-size: rem(14px);
+
+    @include mixins.above(mobile) {
+      font-size: rem(16px);
+    }
+  }
+}

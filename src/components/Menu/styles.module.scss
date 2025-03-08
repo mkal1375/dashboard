@@ -1,9 +1,8 @@
-@use '@/styles/utils' as u;
-
 .menu-container {
-  --inner-height: #{u.rem(70px)};
+  --inner-height: #{rem(70px)};
 
   position: fixed;
+  z-index: var(--layer-above);
   bottom: 0;
   right: 0;
   left: 0;
@@ -22,17 +21,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: u.rem(8px);
+  padding: rem(8px);
   border-radius: var(--radii-full);
   flex-grow: 1;
-  max-width: u.rem(350px);
+  max-width: rem(350px);
+  @include mixins.shadow;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  gap: u.rem(8px);
-  padding: u.rem(10px) u.rem(24px);
+  gap: rem(8px);
+  padding: rem(10px) rem(24px);
   border-radius: var(--radii-full);
   color: var(--color-primary-light);
   font-weight: 600;

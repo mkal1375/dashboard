@@ -1,17 +1,16 @@
-@use '@/styles/utils' as u;
-
 .search-input {
-  --icon-size: u.rem(24px);
-  padding: u.rem(16px);
+  --icon-size: rem(24px);
+  flex-grow: 6;
+  padding-inline: rem(16px);
   border-radius: var(--radii-full);
   background-color: var(--gray-50);
   display: flex;
   align-items: center;
-  gap: u.rem(16px);
+  gap: rem(16px);
   height: var(--items-height);
 
   &:focus-within {
-    outline: u.rem(3px) solid var(--color-focus-ring);
+    outline: rem(3px) solid var(--color-focus-ring);
   }
 
   &__input {

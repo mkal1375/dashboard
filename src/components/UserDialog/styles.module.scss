@@ -1,0 +1,69 @@
+.user-dialog {
+  @include mixins.shadow;
+  width: 100%;
+  max-width: rem(380px);
+  border-radius: var(--radii-lg);
+  border: none;
+  padding: rem(24px);
+  display: grid;
+  gap: rem(24px);
+
+  &::backdrop {
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__close {
+    --size: #{rem(24px)};
+    order: 2;
+    border: none;
+    background-color: transparent;
+    font-size: var(--size);
+    width: var(--size);
+    height: var(--size);
+    color: var(--gray-400);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &:hover {
+      color: var(--gray-800);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: grid;
+    gap: rem(4px);
+  }
+
+  &__avatar {
+    --size: #{rem(80px)};
+  }
+
+  &__name {
+    font-size: rem(18px);
+    font-weight: 600;
+  }
+
+  &__email {
+    color: var(--gray-600);
+    font-size: rem(16px);
+  }
+
+  &__details {
+    display: grid;
+    gap: rem(8px);
+
+    @include mixins.above(mobile) {
+      gap: rem(12px);
+    }
+  }
+}

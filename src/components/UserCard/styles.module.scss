@@ -1,0 +1,66 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: rem(16px);
+  cursor: pointer;
+  background-color: var(--gray-dead);
+  overflow: hidden;
+
+  @include mixins.above(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &:hover {
+    background-color: var(--blue-50);
+  }
+
+  &__avatar_wrapper {
+    position: relative;
+    display: table;
+  }
+
+  &__country {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+
+    @include mixins.above(mobile) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__avatar {
+    --size: #{rem(48px)};
+
+    @include mixins.above(mobile) {
+      --size: #{rem(64px)};
+    }
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  &__name {
+    font-weight: 600;
+    @include mixins.text-overflow;
+
+    @include mixins.above(mobile) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__email {
+    color: var(--gray-500);
+    font-size: rem(14px);
+    @include mixins.text-overflow;
+
+    @include mixins.above(mobile) {
+      font-size: rem(16px);
+    }
+  }
+}

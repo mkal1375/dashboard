@@ -1,4 +1,4 @@
-@use '@/styles/utils' as u;
+@use 'sass:map';
 
 $button-variants: (
   'primary': (
@@ -18,18 +18,49 @@ $button-variants: (
   ),
 );
 
+$button-sizes: (
+  'sm': (
+    fontSize: rem(12px),
+    padding: 0 rem(24px),
+    height: rem(36px),
+  ),
+);
+
 .button {
-  background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
   border: 1px solid transparent;
-  padding: u.rem(8px) u.rem(16px);
-  border-radius: var(--radii-xs);
+  border-radius: var(--radii-full);
+  font-size: inherit;
+  padding: 0 rem(24px);
+  height: rem(42px);
+  cursor: pointer;
+  background-color: var(--gray-50);
+  font-weight: 600;
+
+  &:hover {
+    background-color: var(--blue-100);
+  }
 
   @each $variant, $styles in $button-variants {
     &--#{$variant} {
-      background-color: map-get($map: $styles, $key: background);
-      border-color: map-get($map: $styles, $key: border);
-      color: map-get($map: $styles, $key: color);
+      background-color: map.get($styles, background);
+      border-color: map.get($styles, border);
+      color: map.get($styles, color);
     }
+  }
+
+  @each $size, $styles in $button-sizes {
+    &--#{$size} {
+      font-size: map.get($styles, fontSize);
+      padding: map.get($styles, padding);
+      height: map.get($styles, height);
+    }
+  }
+
+  &--full {
+    width: 100%;
   }
 }

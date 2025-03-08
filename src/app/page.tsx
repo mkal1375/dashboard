@@ -1,6 +1,9 @@
 'use client';
 
+import Loading from '@/components/core/Loading';
 import Filters from '@/components/Filters';
+import UserDialog from '@/components/UserDialog';
+import UsersList from '@/components/UsersList';
 import { db } from '@/db/db';
 import useGlobalStore from '@/store/global';
 import { userResponseSchema } from '@/types/user';
@@ -52,10 +55,15 @@ export default function HomePage() {
     fetch();
   }, [users]);
 
+  if (!users) {
+    return <Loading />;
+  }
+
   return (
     <div>
       <Filters />
-      <pre>{JSON.stringify(users, null, 2)}</pre>
+      <UsersList users={users} />
+      <UserDialog />
     </div>
   );
 }

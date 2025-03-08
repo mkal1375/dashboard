@@ -42,8 +42,9 @@ export async function fetcher<T extends ZodType<unknown, ZodTypeDef, unknown>>(
         `Validation failed: ${error.errors.map((e) => e.message).join(', ')}`
       );
     }
-    throw new Error(
-      `Fetch failed: ${error instanceof Error ? error.message : 'Unknown error'}`
-    );
+    if (error instanceof Error) {
+      throw new Error(`Fetch failed: ${error.message}`);
+    }
+    throw new Error(`Fetch failed: Unknown Error \n ${error}`);
   }
 }

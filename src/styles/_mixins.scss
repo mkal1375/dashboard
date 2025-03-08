@@ -1,3 +1,6 @@
+@use 'scss-variables' as v;
+@use 'sass:map';
+
 @mixin shadow {
   box-shadow:
     inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
@@ -5,4 +8,26 @@
     /* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
     0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
     0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+
+@mixin above($bp) {
+  $bps: (
+    'desktop': v.$bp-desktop,
+    'tablet': v.$bp-tablet,
+    'mobile': v.$bp-mobile,
+  );
+
+  @if map.has-key($bps, $bp) {
+    @media (min-width: map.get($bps, $bp)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint \"#{$bp}\" not found in breakpoints map.";
+  }
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

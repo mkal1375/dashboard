@@ -1,12 +1,18 @@
-@use '@/styles/utils' as u;
-
 .filters {
-  --items-height: u.rem(56px);
+  --items-height: #{rem(48px)};
+  position: relative;
+  z-index: var(--layer-above);
 
   display: flex;
-  gap: u.rem(16px);
+  gap: rem(8px);
   background: linear-gradient(to bottom, white, transparent);
-  padding-block: var(--offset-bottom);
+  padding-block: var(--offset-top);
   position: sticky;
   top: 0;
+  flex-direction: column;
+  @include mixins.above(mobile) {
+    --items-height: #{rem(56px)};
+    gap: rem(16px);
+    flex-direction: row;
+  }
 }

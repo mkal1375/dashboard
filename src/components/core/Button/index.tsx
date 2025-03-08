@@ -1,4 +1,5 @@
 import buttonStyles from '@/components/core/Button/variants';
+import clsx from 'clsx';
 import { VariantProps } from 'cva';
 
 export interface ButtonProps
@@ -7,8 +8,13 @@ export interface ButtonProps
   loading?: boolean;
 }
 
-export default function Button(props: ButtonProps) {
-  const { loading, variant, ...rest } = props;
+export default function Button({ className, ...props }: ButtonProps) {
+  const { loading, variant, size, ...rest } = props;
 
-  return <button className={buttonStyles({ loading, variant })} {...rest} />;
+  return (
+    <button
+      className={clsx(buttonStyles({ loading, variant, size }), className)}
+      {...rest}
+    />
+  );
 }

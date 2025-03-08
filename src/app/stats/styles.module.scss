@@ -1,0 +1,13 @@
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(16px);
+  padding-block-start: var(--offset-top);
+
+  @include mixins.above(tablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+    & > *:last-child {
+      grid-column: 1 / 4;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.stat-card {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    color: var(--color-primary);
+    font-size: rem(24px);
+    font-weight: 600;
+  }
+}

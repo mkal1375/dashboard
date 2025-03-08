@@ -1,0 +1,10 @@
+.nat {
+  font-size: rem(14px);
+  display: flex;
+  align-items: center;
+  gap: rem(4px);
+
+  & > div {
+    letter-spacing: 2px;
+  }
+}
