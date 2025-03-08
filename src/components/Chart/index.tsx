@@ -10,10 +10,10 @@ import {
 } from 'recharts';
 import styles from './styles.module.scss';
 
-interface DataItem {
+type DataItem = {
   name: string;
   value: number;
-}
+};
 
 export default function Chart({ data }: { data: DataItem[] }) {
   return (

@@ -1,8 +1,10 @@
 import { Icon } from '@iconify/react';
 import { useRef } from 'react';
 import styles from './styles.module.scss';
-export interface TextInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {}
+export type TextInputProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+>;
 export function SearchInput(props: TextInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
