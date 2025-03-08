@@ -25,5 +25,6 @@ export default function useInternals() {
     ref,
     user,
     open,
+    close,
   };
 }

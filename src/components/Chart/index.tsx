@@ -28,7 +28,7 @@ export default function Chart({ data }: { data: DataItem[] }) {
             <CartesianGrid strokeDasharray="3 3" />
             <YAxis dataKey="value" />
             <Tooltip />
-            <Bar dataKey="value" fill="#0c53c1">
+            <Bar dataKey="value" fill="var(--color-primary)">
               <LabelList
                 dataKey="name"
                 position="centerTop"

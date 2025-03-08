@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 import useInternals from './useInternals';
 
 export default function UserDialog() {
-  const { user, ref, resetDialog, open } = useInternals();
+  const { user, ref, resetDialog, open, close } = useInternals();
 
   if (!open || !user) return null;
 
