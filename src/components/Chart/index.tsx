@@ -10,10 +10,10 @@ import {
 } from 'recharts';
 import styles from './styles.module.scss';
 
-type DataItem = {
+interface DataItem {
   name: string;
   value: number;
-};
+}
 
 export default function Chart({ data }: { data: DataItem[] }) {
   return (
@@ -28,7 +28,7 @@ export default function Chart({ data }: { data: DataItem[] }) {
             <CartesianGrid strokeDasharray="3 3" />
             <YAxis dataKey="value" />
             <Tooltip />
-            <Bar dataKey="value" fill="var(--color-primary)">
+            <Bar dataKey="value" fill="#0c53c1">
               <LabelList
                 dataKey="name"
                 position="centerTop"

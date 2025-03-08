@@ -1,5 +1,5 @@
-import styles from './styles.module.scss';
 import { cva } from 'cva';
+import styles from './styles.module.scss';
 
 const buttonStyles = cva({
   base: styles.button,
@@ -16,7 +16,7 @@ const buttonStyles = cva({
       sm: styles['button--sm'],
     },
     loading: {
-      true: styles.buttonLoading,
+      true: styles['button--loading'],
     },
   },
 });

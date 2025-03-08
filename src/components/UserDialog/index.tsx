@@ -1,34 +1,16 @@
 import Avatar from '@/components/core/Avatar';
 import Nat from '@/components/UserDialog/Nat';
 import Phone from '@/components/UserDialog/Phone';
-import useGlobalStore from '@/store/global';
 import { Icon } from '@iconify/react';
-import { useEffect, useRef } from 'react';
 import Row from './Row';
 import styles from './styles.module.scss';
+import useInternals from './useInternals';
 
 export default function UserDialog() {
-  const {
-    dialog: { user, open },
-    resetDialog,
-  } = useGlobalStore();
-  const ref = useRef<HTMLDialogElement>(null);
+  const { user, ref, resetDialog, open } = useInternals();
 
-  const close = () => {
-    ref.current?.close();
-  };
+  if (!open || !user) return null;
 
-  useEffect(() => {
-    if (open) {
-      ref.current?.showModal();
-    } else {
-      close();
-    }
-  }, [open]);
-
-  if (!open) return null;
-
-  console.log(user);
   return (
     <dialog ref={ref} onClose={resetDialog} className={styles['user-dialog']}>
       <header className={styles['user-dialog__header']}>

@@ -5,16 +5,19 @@ $button-variants: (
     background: var(--color-primary),
     border: var(--color-primary),
     color: var(--color-on-primary),
+    hover: var(--color-primary-darker),
   ),
   'ghost': (
     background: transparent,
     border: transparent,
     color: var(--color-text),
+    hover: var(--gray-200),
   ),
   'outline': (
     background: var(--color-white),
-    color: var(--color-text),
+    color: var(--color-primary),
     border: var(--color-primary),
+    hover: var(--color-primary-light),
   ),
 );
 
@@ -27,6 +30,7 @@ $button-sizes: (
 );
 
 .button {
+  --bg-color: var(--gray-50);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,18 +41,19 @@ $button-sizes: (
   padding: 0 rem(24px);
   height: rem(42px);
   cursor: pointer;
-  background-color: var(--gray-50);
+  background-color: var(--bg-color);
   font-weight: 600;
-
-  &:hover {
-    background-color: var(--blue-100);
-  }
 
   @each $variant, $styles in $button-variants {
     &--#{$variant} {
       background-color: map.get($styles, background);
       border-color: map.get($styles, border);
       color: map.get($styles, color);
+      &:hover {
+        $hover-value: map.get($styles, hover);
+        --bg-color: #{$hover-value};
+        background-color: var(--bg-color);
+      }
     }
   }
 
@@ -62,5 +67,10 @@ $button-sizes: (
 
   &--full {
     width: 100%;
+  }
+
+  &--loading {
+    opacity: 80%;
+    cursor: wait;
   }
 }

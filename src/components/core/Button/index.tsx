@@ -9,12 +9,13 @@ export interface ButtonProps
 }
 
 export default function Button({ className, ...props }: ButtonProps) {
-  const { loading, variant, size, ...rest } = props;
+  const { loading, disabled, variant, size, ...rest } = props;
 
   return (
     <button
       className={clsx(buttonStyles({ loading, variant, size }), className)}
       {...rest}
+      disabled={disabled || loading}
     />
   );
 }
