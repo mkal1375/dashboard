@@ -18,7 +18,7 @@ interface DataItem {
 export default function Chart({ data }: { data: DataItem[] }) {
   return (
     <StatCard
-      icon="solar:global-bold"
+      icon="global"
       title="Nationality Distribution"
       className={styles['stat-card-chart']}
     >
