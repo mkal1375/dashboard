@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next';
 import path from 'path';
-// import ungpluginIcons from 'unplugin-icons/webpack';
+import ungpluginIcons from 'unplugin-icons/webpack';
 
 const nextConfig: NextConfig = {
   sassOptions: {
@@ -11,17 +11,18 @@ const nextConfig: NextConfig = {
     	@use 'scss-variables' as *;
     `,
   },
-  // reactStrictMode: true,
-  // webpack(config) {
-  //   config.plugins.push(
-  //     ungpluginIcons({
-  //       compiler: 'jsx',
-  //       jsx: 'react',
-  //       autoInstall: true,
-  //     })
-  //   );
-  //   return config;
-  // },
+  webpack(config) {
+    config.plugins.push(
+      ungpluginIcons({
+        compiler: 'jsx',
+        jsx: 'react',
+        scale: 1,
+        autoInstall: true,
+      })
+    );
+    config.resolve.extensions = ['.jsx', ...config.resolve.extensions];
+    return config;
+  },
   images: {
     remotePatterns: [
       {

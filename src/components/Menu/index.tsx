@@ -1,10 +1,10 @@
 'use client';
-import styles from './styles.module.scss';
-import { items } from './constants';
+import Icon from '@/components/core/Icon';
+import { cva, VariantProps } from 'cva';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cva, VariantProps } from 'cva';
-import { Icon } from '@iconify/react';
+import { items } from './constants';
+import styles from './styles.module.scss';
 
 export default function Menu() {
   const path = usePathname();
@@ -35,7 +35,7 @@ type MenuItemProps = {
 function MenuItem({ item, active }: MenuItemProps) {
   return (
     <Link className={menuItemStyles({ active })} href={item.path}>
-      <Icon icon={item.icon} width={32} />
+      <Icon name={item.icon} width={32} />
       {active && <span>{item.title}</span>}
     </Link>
   );

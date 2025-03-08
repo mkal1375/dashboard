@@ -2,17 +2,17 @@ export const items = [
   {
     title: 'Dashboard',
     path: '/',
-    icon: 'solar:home-2-bold',
+    icon: 'home',
   },
   {
     title: 'Stats',
     path: '/stats',
-    icon: 'solar:chart-square-bold',
+    icon: 'chart',
   },
   {
     title: 'Settings',
     path: '/settings',
-    icon: 'solar:settings-bold',
+    icon: 'settings',
   },
 ] as const;
 

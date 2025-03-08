@@ -1,7 +1,7 @@
 import Avatar from '@/components/core/Avatar';
 import Card from '@/components/core/Card';
+import Icon from '@/components/core/Icon';
 import { nationalityCountryMap, User } from '@/types/user';
-import { Icon } from '@iconify/react';
 import styles from './styles.module.scss';
 
 export default function UserCard({
@@ -20,7 +20,7 @@ export default function UserCard({
           className={styles['user-card__avatar']}
         />
         <Icon
-          icon={nationalityCountryMap[user.nat].icon}
+          name={nationalityCountryMap[user.nat].icon}
           className={styles['user-card__country']}
         />
       </div>

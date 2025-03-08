@@ -1,9 +1,10 @@
+import { Icons } from '@/components/core/Icon';
 import { z } from 'zod';
 
 // https://randomuser.me/documentation#nationalities
 
-function getIconName(name: string) {
-  return `circle-flags:${name}`;
+function getIconName(name: string): Icons {
+  return `flag-${name}` as Icons;
 }
 
 export const nationalityCountryMap = {

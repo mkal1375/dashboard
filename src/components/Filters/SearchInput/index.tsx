@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import Icon from '@/components/core/Icon';
 import { useRef } from 'react';
 import styles from './styles.module.scss';
 export type TextInputProps = Omit<
@@ -14,7 +14,7 @@ export function SearchInput(props: TextInputProps) {
 
   return (
     <div className={styles['search-input']} onClick={handleClick}>
-      <Icon icon="solar:minimalistic-magnifer-linear" width={24} />
+      <Icon name="magnifier" width={24} />
       <input
         {...props}
         ref={inputRef}

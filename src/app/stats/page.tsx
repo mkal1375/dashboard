@@ -11,13 +11,13 @@ export default function StatsPage() {
 
   return (
     <div className={styles.stats}>
-      <StatCard icon="solar:global-bold" title="Countries">
+      <StatCard icon="global" title="Countries">
         <StatNumber number={countriesCount} />
       </StatCard>
-      <StatCard icon="solar:users-group-rounded-bold" title="Users">
+      <StatCard icon="users" title="Users">
         <StatNumber number={users?.length ?? 0} />
       </StatCard>
-      <StatCard icon="solar:database-bold" title="Storage">
+      <StatCard icon="database" title="Storage">
         <StatNumber number={storage} unit="KB" />
       </StatCard>
       <Chart data={data} />
