@@ -1,6 +1,6 @@
 ## Demo
 
-[link](https://dashboard-theta-sable-85.vercel.app/)
+[link](https://mycontactly.vercel.app)
 
 ## Design
 
